@@ -16,7 +16,7 @@ void raylib_demo() {
     InitWindow(800, 600, "hello");
     while (!WindowShouldClose()) {
         BeginDrawing();
-        ClearBackground(RED);
+        ClearBackground(WHITE);
         EndDrawing();
     }
     CloseWindow();
@@ -24,7 +24,7 @@ void raylib_demo() {
 
 void json_demo() {
     jsmn_parser p;
-    jsmntok_t tokens[128];
+    jsmntok_t tokens[1];
     jsmn_init(&p);
     char* s = "{\"abc\":[1,2,3]}";
     int r = jsmn_parse(&p, s, strlen(s), tokens, array_size(tokens));
@@ -39,7 +39,7 @@ void json_demo() {
 }
 
 int main() {
-    //raylib_demo();
-    json_demo();
+    raylib_demo();
+    //json_demo();
     return 0;
 }
